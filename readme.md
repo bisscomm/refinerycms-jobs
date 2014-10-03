@@ -1,4 +1,5 @@
 # Refinery CMS Jobs
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/bisscomm/refinerycms-jobs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Jobs engine for [Refinery CMS](http://refinerycms.com) allows you to post vacancies to the jobs section of your website.
 
