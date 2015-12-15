@@ -1,0 +1,15 @@
+stage:
+  before:
+    - bundle exec rake refinery:testing:dummy_app
+
+  run:
+    # workdir is sandbox
+    - bundle exec rails server
+
+  database:
+    - echo "skip database stage. rake sandbox already did everything"
+
+config:
+  database: postgresql
+  services:
+    - postgresql
