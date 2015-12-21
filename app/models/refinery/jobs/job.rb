@@ -20,9 +20,6 @@ module Refinery
       validates_length_of :title, :employment_terms, :ref, :education, :experience,
         :skills, :languages, :salary, :hours, :employment_terms, :length, :contact, maximum: 255
 
-      def self.latest(number = 5)
-        limit(number).order('created_at DESC')
-      end
 
       # If title changes tell friendly_id to regenerate slug when
       # saving record
@@ -34,11 +31,16 @@ module Refinery
         title
       end
 
+      def self.latest(number = 5)
+        limit(number).order('created_at DESC')
+      end
+
       def live?
         !draft && published_at <= DateTime.now
       end
 
       class << self
+
         # Wrap up the logic of finding the pages based on the translations table.
         def with_globalize(conditions = {})
           conditions = {:locale => ::Globalize.locale}.merge(conditions)

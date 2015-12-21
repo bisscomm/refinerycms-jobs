@@ -15,3 +15,9 @@ FactoryGirl.define do
     DateTime.now + n.days
   end
 end
+
+FactoryGirl.define do
+  sequence :published_at do |n|
+    DateTime.now - n.days
+  end
+end

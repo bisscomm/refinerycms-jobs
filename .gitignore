@@ -4,3 +4,4 @@ spec/dummy
 
 # Local Gemfile for developing without sharing dependencies
 .gemfile
+.byebug_history
