@@ -1,0 +1,106 @@
+zh-CN:
+  refinery:
+    plugins:
+      refinery_jobs:
+        title: 职位
+    jobs:
+      config:
+        from_name: "%{name} [%{site_name}]"
+      admin:
+        jobs:
+          actions:
+            create_new: 建立新的职位
+            reorder: 对所有职位重新排序
+            reorder_done: 结束对职位的重新排序
+          records:
+            title: 职位
+            sorry_no_results: 对不起，未找到结果。
+            no_items_yet: 目前没有职位。 点击 "新建职位" 创建一个职位。
+          job:
+            job_applications_count:
+              zero: 没有职位申请
+              one: "%{count} 个职位申请"
+              other: "%{count} 个职位申请"
+            view_live_html:  查看职位的最新内容。<br/><em>(新窗口中打开)</em>
+            view_applications_for_this_job: 查看这个职位的所有申请
+            edit: 编辑职位
+            delete: 永久删除这个职位
+            draft: 草稿
+        job_applications:
+          index:
+            job_applications_for_position: '职位 "%{job_title}" 的所有申请'
+            back_to_jobs: 返回职位列表
+          job_application:
+            created_at: 申请时间
+            name: 姓名
+            email: 电子邮箱
+            phone: 手机号码
+            cover_letter: 求职信
+            resume: 简历
+            download_resume: "下载 %{name} 的简历"
+      jobs:
+        show:
+          fill: 剩余名额
+          ref: 职位编号
+          description: 职位描述
+          requirements_and_work_conditions: 任职要求
+          education: 学历
+          experience: 相关工作经验
+          skills: 工作技能
+          languages: 语言​​要求
+          salary: 薪酬
+          hours: 每周工作时长
+          employment_terms: 雇佣条款
+          length: 工作年限
+          employment_date: 雇佣日期
+          contact: 联系人姓名
+          back_to_list: 返回职位列表
+        index:
+          no_open_positions: 目前没有开放的职位。
+          current_open_positions: 目前开放的职位
+      job_applications:
+        form:
+          job_application_for_position: 在线申请 %{job_title}
+          apply: 申请
+          mandatory_fields: <sup>*</sup> 字段是必填的。
+        show:
+          job_application_successfully_submitted: '你申请<strong>"%{job_title}"</strong>职位的表单已经成功提交. <br>你将收到一封确认邮件。<br><br>谢谢。'
+          back_to_list: 返回职位列表
+      job_mailer:
+        notification:
+          greeting: 你好
+          you_recieved_new_job_application: 你的网站收到了新的职位申请。
+          job_application_starts: --- 申请开头 ---
+          job_application_ends: --- 申请结尾 ---
+          from: 发信人
+          email: 电子邮箱
+          phone: 手机号码
+          cover_letter: 求职信
+          resume: 简历
+          closing_line: 亲切的问候
+          ps: 所有职位申请都存储在“职位”中，方便你日后使用。
+  activerecord:
+    attributes:
+      'refinery/jobs/job':
+        title: 职位名称
+        fill: 招聘人数
+        ref: 职位编号
+        description: 职位描述
+        education: 学历
+        experience: 相关工作经验
+        skills: 工作技能
+        languages: 语言​​要求
+        salary: 薪酬
+        hours: 每周工作时长
+        employment_terms: 雇佣条款
+        length: 工作年限
+        employment_date: 雇佣日期
+        contact: 联系人姓名
+        published_at: 发布时间
+        draft: 存为草稿
+      'refinery/jobs/job_application':
+        name: 姓名
+        email: 电子邮箱
+        phone: 手机号码
+        cover_letter: 求职信
+        resume: 简历
