@@ -1,4 +1,5 @@
 # Refinery CMS Jobs
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/bisscomm/refinerycms-jobs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Build Status](https://travis-ci.org/refinerycms-contrib/refinerycms-jobs.svg?branch=master)](https://travis-ci.org/refinerycms-contrib/refinerycms-jobs) [![Code Climate](https://codeclimate.com/github/refinerycms-contrib/refinerycms-jobs/badges/gpa.svg)](https://codeclimate.com/github/refinerycms-contrib/refinerycms-jobs) [![Test Coverage](https://codeclimate.com/github/refinerycms-contrib/refinerycms-jobs/badges/coverage.svg)](https://codeclimate.com/github/refinerycms-contrib/refinerycms-jobs/coverage)
 
