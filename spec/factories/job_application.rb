@@ -1,6 +1,6 @@
-require "factory_girl"
+require "factory_bot"
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :job_application, class: "Refinery::Jobs::JobApplication" do
     name
     phone '321-123-1234'

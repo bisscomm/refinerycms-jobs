@@ -1,6 +1,6 @@
-require "factory_girl"
+require "factory_bot"
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :job, class: "Refinery::Jobs::Job" do
     title
     description

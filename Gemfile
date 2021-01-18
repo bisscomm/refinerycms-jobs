@@ -2,19 +2,20 @@ source 'https://rubygems.org'
 
 gemspec
 
-git 'https://github.com/refinery/refinerycms', branch: '3-0-stable' do
-  gem "refinerycms"
+gem 'refinerycms', github: 'refinery/refinerycms', branch: '4-0-stable'
 
-  group :test do
-    gem 'refinerycms-testing'
-    gem 'poltergeist', github: 'teampoltergeist/poltergeist', branch: 'master'
-  end
+group :test, :development do
+  gem 'refinerycms-testing', github: 'refinery/refinerycms', branch: '4-0-stable'
+end
+
+group :test do
+  gem 'poltergeist'
 end
 
 # Database Configuration
 unless ENV["TRAVIS"]
   gem "activerecord-jdbcsqlite3-adapter", platform: :jruby
-  gem "sqlite3", platform: :ruby
+  gem 'sqlite3', '~> 1.3', '< 1.4', platform: :ruby
 end
 
 if !ENV["TRAVIS"] || ENV["DB"] == "mysql"
@@ -37,13 +38,15 @@ group :assets do
   gem "uglifier"
 end
 
-group :development do
-  gem 'quiet_assets'
-end
+# group :development do
+#   gem 'quiet_assets'
+# end
 
 group :test do
   gem "launchy"
   gem "byebug"
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 # Load local gems according to Refinery developer preference.

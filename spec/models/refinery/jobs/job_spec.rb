@@ -5,20 +5,20 @@ module Refinery
   module Jobs
     describe Job, type: :model do
       before :each do
-        @job_application = FactoryGirl.create :job_application
-        @job = FactoryGirl.create :job
+        @job_application = FactoryBot.create :job_application
+        @job = FactoryBot.create :job
       end
 
       context 'validations' do
         it 'requires title and description' do
           #Negative tests
-          expect(FactoryGirl.build(:job, description: nil)).not_to be_valid
-          expect(FactoryGirl.build(:job, title: nil)).not_to be_valid
-          expect(FactoryGirl.build(:job, title: '')).not_to be_valid
-          expect(FactoryGirl.build(:job, description: '')).not_to be_valid
+          expect(FactoryBot.build(:job, description: nil)).not_to be_valid
+          expect(FactoryBot.build(:job, title: nil)).not_to be_valid
+          expect(FactoryBot.build(:job, title: '')).not_to be_valid
+          expect(FactoryBot.build(:job, description: '')).not_to be_valid
 
           #Positive tests
-          expect(FactoryGirl.build(:job, description: 1, title: 1)).to be_valid
+          expect(FactoryBot.build(:job, description: 1, title: 1)).to be_valid
         end
       end
 
@@ -48,7 +48,7 @@ module Refinery
 
       context 'latest' do
         it 'should return the 5 latest job' do
-          jobs = FactoryGirl.create_list(:job, 5)
+          jobs = FactoryBot.create_list(:job, 5)
 
           jobs.reverse!
 

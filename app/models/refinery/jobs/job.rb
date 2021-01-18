@@ -27,7 +27,7 @@ module Refinery
       # If title changes tell friendly_id to regenerate slug when
       # saving record
       def should_generate_new_friendly_id?
-        title_changed?
+        attribute_changed?(:title)
       end
 
       def friendly_id_source

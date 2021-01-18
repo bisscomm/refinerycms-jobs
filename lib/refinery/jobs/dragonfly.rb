@@ -11,25 +11,25 @@ module Refinery
 
           app_resources.configure do |c|
             datastore :file, {
-              :root_path => Refinery::Resources.datastore_root_path
+              :root_path => Refinery::Dragonfly.datastore_root_path
             }
-            url_format Refinery::Resources.dragonfly_url_format
-            url_host Refinery::Resources.dragonfly_url_host
-            secret Refinery::Resources.dragonfly_secret
+            url_format Refinery::Dragonfly.url_format
+            url_host Refinery::Dragonfly.url_host
+            secret Refinery::Dragonfly.secret
             response_header 'Content-Disposition' do |job, request, headers|
               "attachment; #{headers['Content-Disposition']}"
             end if Refinery::Resources.content_disposition == :attachment
             dragonfly_url nil
           end
 
-          if ::Refinery::Resources.s3_backend
+          if ::Refinery::Dragonfly.s3_datastore
             require 'dragonfly/s3_data_store'
             options = {
-              bucket_name: Refinery::Resources.s3_bucket_name,
-              access_key_id: Refinery::Resources.s3_access_key_id,
-              secret_access_key: Refinery::Resources.s3_secret_access_key
+              bucket_name: Refinery::Dragonfly.s3_bucket_name,
+              access_key_id: Refinery::Dragonfly.s3_access_key_id,
+              secret_access_key: Refinery::Dragonfly.s3_secret_access_key
             }
-            options.update(region: Refinery::Resources.s3_region) if Refinery::Resources.s3_region
+            options.update(region: Refinery::Dragonfly.s3_region) if Refinery::Dragonfly.s3_region
             app_resources.use_datastore :s3, options
           end
         end
@@ -49,7 +49,6 @@ module Refinery
           end
         end
       end
-
     end
   end
 end
